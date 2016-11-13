@@ -1,26 +1,10 @@
 import Vue from 'vue'
-import MainApp from './MainApp'
+import Vuex from 'vuex'
+import Routes from './routes'
+import RootLayout from './layout/OneColumnLayout'
 
-/* eslint-disable no-new */
-new Vue({
-  el: '#mainApp',
-  data: {
-    newTodo: '',
-    todos: [
-      { text: 'Add some todos' }
-    ]
-  },
-  methods: {
-    addTodo() {
-      const text = this.newTodo.trim()
-      if (text) {
-        this.todos.push({ text })
-        this.newTodo = ''
-      }
-    },
-    removeTodo(index) {
-      this.todos.splice(index, 1)
-    }
-  },
-  components: { MainApp }
-})
+// init Vue plugin
+Vue.use(Vuex)
+
+// start app with routes
+Routes.start(RootLayout, '#root')
