@@ -16,6 +16,11 @@ $z-index-image-modal: 1004;
 $navbar-height: 6rem;
 
 /**
+* Navbar
+**/
+$left-sidebar-width: 25rem;
+
+/**
 * Toobar
 **/
 $toolbar-height: 4rem;
@@ -35,8 +40,8 @@ $basic-color-secondary: #3b3f51 !default;
 
 // background
 $bg-color-primary: #FFFFFF !default;
-$bg-color-secondary: #333333 !default;
-$bg-color-third: #303030 !default;
+$bg-color-secondary: #2A2A2A !default;
+$bg-color-third: #3D3D3D !default;
 $bg-color-secondary-transparent: rgba(45, 45, 45, 0.9) !default;
 
 /**

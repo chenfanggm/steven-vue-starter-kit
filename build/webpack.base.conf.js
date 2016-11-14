@@ -5,7 +5,10 @@ var projectRoot = path.resolve(__dirname, '../')
 
 module.exports = {
   entry: {
-    app: './src/main.js'
+    app: [
+      'font-awesome-sass-loader',
+      './src/main.js'
+    ]
   },
   output: {
     path: config.build.assetsRoot,
@@ -26,12 +29,12 @@ module.exports = {
   },
   module: {
     preLoaders: [
-      {
+      /*{
         test: /\.vue$/,
         loader: 'eslint',
         include: projectRoot,
         exclude: /node_modules/
-      },
+      },*/
       {
         test: /\.js$/,
         loader: 'eslint',

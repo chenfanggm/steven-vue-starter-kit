@@ -1,24 +1,68 @@
 <template>
-  <div>
-    <header>
+  <div class="root">
+    <header class="header">
       <navbar></navbar>
     </header>
-    <main>
-      <router-view></router-view>
+    <main class="main">
+      <left-side-bar></left-side-bar>
+      <div class="content-right">
+        <div class="container">
+          <router-view keep-alive
+                       transition="fade"
+                       transition-mode="out-in"></router-view>
+        </div>
+      </div>
     </main>
   </div>
 </template>
 
 <script>
 import Navbar from '../components/Navbar'
+import LeftSideBar from '../components/LeftSideBar'
 
 export default {
   components: {
-    Navbar
+    Navbar,
+    LeftSideBar
   }
 }
 </script>
 
 <style lang="scss">
   @import "../styles/main";
+  @import "../styles/animation";
+
+  .root {
+    width: 100%;
+    height: 100%;
+
+    >.header {
+      width: 100%;
+    }
+
+    >.main {
+      width: 100%;
+      height: 100%;
+      padding-top: $navbar-height;
+
+      >.content-right {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        padding-left: $left-sidebar-width;
+
+        >.container {
+          width: 100%;
+          height: 100%;
+          padding: 2rem;
+        }
+      }
+    }
+
+    &.noScroll {
+      overflow: hidden;
+    }
+  }
+
 </style>

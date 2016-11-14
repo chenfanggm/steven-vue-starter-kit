@@ -64,10 +64,4 @@
   *:after {
     box-sizing: inherit;
   }
-
-  #root {
-    &.noScroll {
-      overflow: hidden;
-    }
-  }
 }

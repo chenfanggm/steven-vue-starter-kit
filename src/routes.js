@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from './pages/Home'
+import Profile from './pages/Profile'
+import Group from './pages/Group'
+import About from './pages/About'
 
-const Bar = {
-  template: '<p>This is bar!</p>'
-}
 
 Vue.use(VueRouter)
 
@@ -22,8 +22,14 @@ router.map({
   '/': {
     component: Home
   },
-  '/bar': {
-    component: Bar
+  '/profile': {
+    component: Profile
+  },
+  '/group': {
+    component: Group
+  },
+  '/about': {
+    component: About
   }
 })
 
