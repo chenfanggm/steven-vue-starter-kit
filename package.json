@@ -17,6 +17,7 @@
     "font-awesome": "^4.7.0",
     "normalize.css": "^5.0.0",
     "vue": "^1.0.21",
+    "vue-resource": "^1.0.3",
     "vue-router": "^0.7.13",
     "vuex": "^1.0.0-rc.2"
   },
@@ -69,6 +70,7 @@
     "shelljs": "^0.6.0",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
+    "standard": "^8.5.0",
     "url-loader": "^0.5.7",
     "vue-hot-reload-api": "^1.2.0",
     "vue-html-loader": "^1.0.0",
