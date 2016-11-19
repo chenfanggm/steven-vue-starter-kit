@@ -19,17 +19,11 @@ export const CreateRouter = function (Vue) {
   })
 
   router.map({
-    '/': {
-      component: Home
-    },
-    '/profile': {
-      component: Profile
-    },
-    '/group': {
-      component: Group
-    },
-    '/about': {
-      component: About
-    }
+    '/': { component: Home },
+    '/profile': { component: Profile },
+    '/group': { component: Group },
+    '/about': { component: About }
   })
+
+  return router
 }
