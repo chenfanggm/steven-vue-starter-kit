@@ -2,7 +2,7 @@
 // Constants
 // ------------------------------------
 export const GET_FEEDS = 'feed/GET_FEEDS'
-export const ADD_FEED  = 'feed/ADD_FEED'
+export const ADD_FEED = 'feed/ADD_FEED'
 
 // ------------------------------------
 // Getters
@@ -35,7 +35,7 @@ const state = {
 // Mutations
 // ------------------------------------
 const mutations = {
-  ADD_FEED (state, newFeed) {
+  ADD_FEED: function (state, newFeed) {
     state.feeds.push(newFeed)
   }
 }

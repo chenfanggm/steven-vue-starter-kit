@@ -17,7 +17,7 @@ export default {
     }
   },
   computed: {
-    currentFeed() {
+    currentFeed: function () {
       return this.feeds[this.feedIndex % this.feeds.length]
     }
   }
