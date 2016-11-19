@@ -19,8 +19,8 @@ module.exports = merge(baseWebpackConfig, {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': config.dev.env,
-      __DEV__: process.env.NODE_ENV.trim() === 'development',
-      __PROD__: process.env.NODE_ENV.trim() === 'production'
+      __DEV__: process.env.NODE_ENV === 'development',
+      __PROD__: process.env.NODE_ENV === 'production'
     }),
     // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
     new webpack.optimize.OccurenceOrderPlugin(),

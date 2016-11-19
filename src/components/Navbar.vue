@@ -2,7 +2,7 @@
   <div class="navbar">
     <div class="header">
       <img class="logo" src="../assets/img/main_logo.png">
-      <span>Caster Book</span>
+      <span class="title">Caster Book</span>
     </div>
     <i class="fa fa-bars menu" aria-hidden="true"></i>
   </div>
