@@ -29,7 +29,9 @@ var webpackConfig = merge(baseWebpackConfig, {
   plugins: [
     // http://vuejs.github.io/vue-loader/workflow/production.html
     new webpack.DefinePlugin({
-      'process.env': env
+      'process.env': env,
+      __DEV__: process.env.NODE_ENV.trim() === 'development',
+      __PROD__: process.env.NODE_ENV.trim() === 'production'
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
@@ -46,7 +48,7 @@ var webpackConfig = merge(baseWebpackConfig, {
       filename: process.env.NODE_ENV === 'testing'
         ? 'index.html'
         : config.build.index,
-      template: 'index.html',
+      template: './src/index.html',
       inject: true,
       minify: {
         removeComments: true,

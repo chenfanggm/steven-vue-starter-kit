@@ -9,13 +9,14 @@ export const CreateRouter = function (Vue) {
   Vue.use(VueRouter)
 
   const router = new VueRouter({
-    hashbang: false,
-    // abstract: true,
-    history: true,
+    root: '/',
     mode: 'html5',
+    hashbang: false,
+    history: true,
+    saveScrollPosition: true,
     linkActiveClass: 'active',
     transitionOnLoad: true,
-    root: '/'
+    suppressTransitionError: __PROD__
   })
 
   router.map({
@@ -23,6 +24,13 @@ export const CreateRouter = function (Vue) {
     '/profile': { component: Profile },
     '/group': { component: Group },
     '/about': { component: About }
+  })
+
+  router.beforeEach(({ to, from, abort, redirect, next }) => {
+    if (to.requireAuth && !router.app.user) {
+      return abort()
+    }
+    next()
   })
 
   return router

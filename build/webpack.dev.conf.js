@@ -18,7 +18,9 @@ module.exports = merge(baseWebpackConfig, {
   devtool: '#eval-source-map',
   plugins: [
     new webpack.DefinePlugin({
-      'process.env': config.dev.env
+      'process.env': config.dev.env,
+      __DEV__: process.env.NODE_ENV.trim() === 'development',
+      __PROD__: process.env.NODE_ENV.trim() === 'production'
     }),
     // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
     new webpack.optimize.OccurenceOrderPlugin(),
@@ -26,8 +28,8 @@ module.exports = merge(baseWebpackConfig, {
     new webpack.NoErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
+      template: './src/index.html',
       filename: 'index.html',
-      template: 'index.html',
       inject: true
     })
   ]

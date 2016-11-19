@@ -22,10 +22,7 @@ import Navbar from '../components/Navbar'
 import LeftSideBar from '../components/LeftSideBar'
 
 export default {
-  components: {
-    Navbar,
-    LeftSideBar
-  },
+  components: { Navbar, LeftSideBar },
   store
 }
 </script>
@@ -66,5 +63,4 @@ export default {
       overflow: hidden;
     }
   }
-
 </style>
