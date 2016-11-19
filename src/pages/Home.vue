@@ -20,7 +20,7 @@ export default {
   },
   computed: {
     maxFeedsFromString() {
-      return parseInt(this.maxFeeds)
+      return parseInt(this.maxFeeds, 10)
     }
   }
 }

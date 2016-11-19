@@ -1,7 +1,6 @@
 // ------------------------------------
 // Constants
 // ------------------------------------
-export const GET_FEEDS = 'feed/GET_FEEDS'
 export const ADD_FEED = 'feed/ADD_FEED'
 
 // ------------------------------------
