@@ -1,7 +1,15 @@
-var path = require('path')
-var config = require('../config')
-var utils = require('./utils')
-var projectRoot = path.resolve(__dirname, '../')
+const path = require('path')
+const _lowerCase = require('lodash/lowerCase')
+const config = require('../config')
+const utils = require('./utils')
+const projectRoot = path.resolve(__dirname, '../')
+
+// define module root
+var moduleResolveRoot = []
+if (process.env.ENV_LANG) {
+  moduleResolveRoot.push(path.resolve(__dirname, '../src/i18n', _lowerCase(process.env.ENV_LANG)))
+}
+moduleResolveRoot.push(path.resolve(__dirname, '../src'))
 
 module.exports = {
   entry: {
@@ -17,6 +25,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['', '.js', '.vue'],
+    root: moduleResolveRoot,
     fallback: [path.join(__dirname, '../node_modules')],
     alias: {
       'src': path.resolve(__dirname, '../src'),
@@ -28,9 +37,9 @@ module.exports = {
     fallback: [path.join(__dirname, '../node_modules')]
   },
   module: {
-    preLoaders: [
+    /*preLoaders: [
       { test: /\.(js|vue)$/, loader: 'eslint', include: projectRoot, exclude: /node_modules/ },
-    ],
+    ],*/
     loaders: [
       { test: /\.vue$/, loader: 'vue' },
       { test: /\.js$/, loader: 'babel', include: projectRoot, exclude: /node_modules/ },

@@ -1,11 +1,11 @@
 <template>
   <div class="profile">
-    This is profile page!
+    This is India profile page!
   </div>
 </template>
 
 <script>
-module.exports = {}
+  export default {}
 </script>
 
 <style lang="scss">
